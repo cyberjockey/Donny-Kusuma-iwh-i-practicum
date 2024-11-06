@@ -1,23 +1,23 @@
 doctype html
 html
     head
-        title= title
+        title= Dino Assets Table
     body
         h1= title
-        a(href="/update-cobj") Add to this table  // Link to add new custom object
+        a(href="/update-cobj") Create/Update Dino Assets
 
         if records.length
             table(border="1")
                 thead
                     tr
-                        th Property 1
-                        th Property 2
-                        th Property 3
+                        th Dino Name
+                        th Dino Paddock
+                        th Dino dietary type
                 tbody
                     each record in records
                         tr
-                            td= record.properties.property1 || 'N/A'
-                            td= record.properties.property2 || 'N/A'
-                            td= record.properties.property3 || 'N/A'
+                            td= record.properties.dino_name || 'N/A'
+                            td= record.properties.dino_paddock || 'N/A'
+                            td= record.properties.dino_dietary_type || 'N/A'
         else
             p No records found.
