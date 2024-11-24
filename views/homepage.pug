@@ -1,23 +1,22 @@
 doctype html
 html
     head
-        title= Dino Assets Table
+        title= title
     body
-        h1= title
-        a(href="/update-cobj") Create/Update Dino Assets
-
+        h1 Custom Object List
+        a(href="/update-cobj") Add to this table
         if records.length
             table(border="1")
                 thead
                     tr
                         th Dino Name
+                        th Dino Dietary Type
                         th Dino Paddock
-                        th Dino dietary type
                 tbody
                     each record in records
                         tr
                             td= record.properties.dino_name || 'N/A'
-                            td= record.properties.dino_paddock || 'N/A'
                             td= record.properties.dino_dietary_type || 'N/A'
+                            td= record.properties.dino_paddock || 'N/A'
         else
-            p No records found.
+            p No custom objects found.

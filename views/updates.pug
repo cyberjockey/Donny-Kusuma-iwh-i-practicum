@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1= message
+    form(action="/update-cobj" method="POST")  // Ensure this matches the POST route
+      fieldset
+        legend Dino Information
+        label(for="dino_name") Dino Name:
+        input(type="text" id="dino_name" name="dino_name" required)
+      
+      fieldset
+        legend Dino Dietary Type
+        label(for="dietary_type") Select Dietary Type:
+        select(id="dietary_type" name="dino_dietary_type" required)
+          option(value="") -- Select --
+          option(value="Carnivore") Carnivore
+          option(value="Herbivore") Herbivore
+
+      fieldset
+        legend Dino Paddock
+        label(for="paddock") Select Paddock Location:
+        select(id="paddock" name="dino_paddock" required)
+          option(value="") -- Select --
+          option(value="Near Mountain") Near Mountain
+          option(value="Near Exhibition Hall") Near Exhibition Hall
+          option(value="Near Lake") Near Lake
+
+      button(type="submit") Submit
